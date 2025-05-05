@@ -2,94 +2,127 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Special Elite', sans-serif;
-  background: url("../assets/images/bg-hearts1.jpg") no-repeat center center fixed;
-  background-size: cover;
-  overflow: hidden;
+  background: linear-gradient(to bottom, #ffe6e6, #ffe6f0);
+  overflow-x: hidden;
 }
 
-h1, h2 {
-  font-family: 'Special Elite', cursive;
-}
-
-.overlay {
-  width: 100vw;
-  height: 100vh;
-  background: rgba(10, 10, 30, 0.7); /* lacivert-mavi transparan örtü */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.title-box {
-  position: relative;
-  padding: 40px 60px;
+.container {
+  padding: 40px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  color: white;
-  z-index: 1;
-  animation: glow 3s ease-in-out infinite alternate;
-  border: 3px solid transparent;
 }
 
-.title-box::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  border-radius: 25px;
-  background: linear-gradient(45deg, #ff6ec4, #7873f5, #6be1f5, #ffb86c);
-  background-size: 300% 300%;
-  animation: spin-border 6s linear infinite;
-  z-index: -1;
+.title {
+  font-size: 32px;
+  color: #b30059;
+  animation: fadeInDown 1.5s ease-out;
 }
 
-h1 {
-  font-size: 48px;
-  margin: 0 0 10px;
-}
-
-h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
-}
-
-.start-button {
-  padding: 12px 28px;
-  background-color: #ffaaa5;
-  color: white;
-  text-decoration: none;
+.intro {
   font-size: 18px;
-  border-radius: 12px;
+  max-width: 700px;
+  margin: 20px auto;
+  color: #333;
+  animation: fadeIn 2s ease-in;
+}
+
+.photo-frame {
+  margin-top: 30px;
+  position: relative;
+}
+
+.photo-frame img {
+  width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  animation: fadeIn 5s ease-in-out;
+}
+
+.bubble {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: -300px;
+  background: rgba(255,255,255,0.95);
+  border: 2px dashed #ff80aa;
+  color: #444;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 16px;
+  width: 280px;
+  margin: auto;
+  animation: popUp 1.2s ease-out;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.next-button {
+  margin-top: 0;
+  text-align: center;
+}
+
+.next-button a {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #fab1a0;
+  color: #2d3436;
+  text-decoration: none;
+  border-radius: 10px;
   font-weight: bold;
-  transition: 0.3s ease;
-  box-shadow: 0 5px 15px rgba(255, 170, 165, 0.4);
+  transition: 0.3s;
 }
 
-.start-button:hover {
-  background-color: #ff8c94;
-  box-shadow: 0 8px 25px rgba(255, 140, 148, 0.5);
-  transform: scale(1.05);
+.next-button a:hover {
+  background-color: #ffeaa7;
 }
 
-/* Parlayan kutu animasyonu */
-@keyframes glow {
-  from {
-    box-shadow: 0 0 10px #6be1f5, 0 0 20px #ff6ec4;
-  }
-  to {
-    box-shadow: 0 0 20px #ffb86c, 0 0 30px #7873f5;
-  }
+
+/* Animasyonlar */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* Dönen çerçeve */
-@keyframes spin-border {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 300% 50%;
-  }
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popUp {
+  0% { transform: scale(0.5); opacity: 0; }
+  70% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 15px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 999;
+  text-align: center;
+}
+
+.music-player p {
+  margin: 0 0 8px 0;
+  color: #d80073;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#playMusicBtn {
+  background-color: #ff6f91;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#playMusicBtn:hover {
+  background-color: #ff3b6e;
 }
