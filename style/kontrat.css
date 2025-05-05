@@ -1,0 +1,149 @@
+﻿body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-image: url('https://i.pinimg.com/564x/52/b4/b6/52b4b6d51159c60bbcbc18661fea76e3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+    padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto; /* Taşmayı engeller */
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 90%;
+  width: 600px;
+  max-height: 90vh; /* kutunun kendisini de sınırlayalım */
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.popup-content video {
+  width: 100%;
+  height: 80vh; /* yüksekliği ekranın %80’i kadar sınırla */
+  object-fit: contain; /* oranı koru, taşırma yapma */
+  border-radius: 10px;
+  display: block;
+}
+
+#hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+}
+#hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 2000; /* popup'tan daha önde */
+}
+
+.heart {
+  position: absolute;
+  color: #ff4d88; /* daha canlı pembe */
+  font-size: 40px; /* daha büyük */
+  animation: floatUp 10s ease-out forwards;
+  opacity: 1;
+  filter: drop-shadow(0 0 5px #ff99cc);
+  transition: transform 0.2s ease;
+}
+
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-300px) scale(1.4);
+    opacity: 0;
+  }
+}
+
+
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #555;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.close-btn:hover {
+  color: #ff4081;
+}
+
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.question {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #d80073;
+}
+
+.buttons button {
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+#yesBtn {
+  background-color: #ff4081;
+  color: white;
+}
+
+#noBtn {
+  background-color: #bdbdbd;
+  color: white;
+  position: absolute;
+}

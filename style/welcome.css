@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Special Elite', sans-serif;
+  background: url("../assets/images/bg-hearts1.jpg") no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
+h1, h2 {
+  font-family: 'Special Elite', cursive;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 10, 30, 0.7); /* lacivert-mavi transparan örtü */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-box {
+  position: relative;
+  padding: 40px 60px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  color: white;
+  z-index: 1;
+  animation: glow 3s ease-in-out infinite alternate;
+  border: 3px solid transparent;
+}
+
+.title-box::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 25px;
+  background: linear-gradient(45deg, #ff6ec4, #7873f5, #6be1f5, #ffb86c);
+  background-size: 300% 300%;
+  animation: spin-border 6s linear infinite;
+  z-index: -1;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 0 0 10px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.start-button {
+  padding: 12px 28px;
+  background-color: #ffaaa5;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 170, 165, 0.4);
+}
+
+.start-button:hover {
+  background-color: #ff8c94;
+  box-shadow: 0 8px 25px rgba(255, 140, 148, 0.5);
+  transform: scale(1.05);
+}
+
+/* Parlayan kutu animasyonu */
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px #6be1f5, 0 0 20px #ff6ec4;
+  }
+  to {
+    box-shadow: 0 0 20px #ffb86c, 0 0 30px #7873f5;
+  }
+}
+
+/* Dönen çerçeve */
+@keyframes spin-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}

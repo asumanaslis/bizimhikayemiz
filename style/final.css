@@ -1,0 +1,103 @@
+﻿body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Special Elite', sans-serif;
+  background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.message-container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 100px auto 60px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.next-button {
+  position: relative;
+  z-index: 3; /* uçuşan fotoların üstüne çıkarır */
+  text-align: center;
+  margin-top: 40px;
+}
+
+.next-button a {
+  display: inline-block;
+  background-color: #ff6f91;
+  color: white;
+  text-decoration: none;
+  padding: 14px 30px;
+  font-size: 18px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.next-button a:hover {
+  background-color: #ff3b6e;
+  transform: scale(1.05);
+}
+
+
+.final-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #2d3436;
+}
+
+.final-text strong {
+  display: block;
+  margin-top: 20px;
+  color: #d63031;
+  font-size: 20px;
+}
+
+.fly-zone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.fly {
+  position: absolute;
+  width: 220px;
+  height: auto;
+  border-radius: 16px;
+  opacity: 0.85;
+  animation: floatPhoto 10s linear infinite;
+  animation-delay: calc(-1s * var(--i));
+  left: calc(5.5% * var(--i));
+  top: 110%;
+}
+
+
+@keyframes floatPhoto {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(360deg);
+    opacity: 0;
+  }
+}

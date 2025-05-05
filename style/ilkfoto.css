@@ -1,0 +1,84 @@
+﻿body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Special Elite', sans-serif;
+  background-color: #fff0f5;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 30px;
+  color: #d63031;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease;
+}
+
+.photo-block img {
+  width: 85%;
+  max-width: 500px;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  animation: fadeIn 2s ease;
+}
+
+.caption {
+  font-style: italic;
+  margin-top: 12px;
+  font-size: 16px;
+  color: #555;
+}
+
+.video-block {
+  margin-top: 40px;
+}
+
+.video-block video {
+  width: 85%;
+  max-width: 500px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.note {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #6c5ce7;
+  font-size: 16px;
+}
+
+.next-button {
+  margin-top: 40px;
+}
+
+.next-button a {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #fab1a0;
+  color: #2d3436;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.next-button a:hover {
+  background-color: #ffeaa7;
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
