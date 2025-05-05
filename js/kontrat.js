@@ -13,16 +13,25 @@ window.addEventListener("DOMContentLoaded", () => {
     noBtn.style.top = `${y}px`;
   });
 
-  // "Evet" basıldığında popup aç ve kalpler uçsun
-  yesBtn.addEventListener("click", () => {
-    popup.style.display = "flex";
-    launchHearts();
-  });
 
-  // Popup'ı kapat
-  closeBtn.addEventListener("click", () => {
-    popup.style.display = "none";
-  });
+  yesBtn.addEventListener("click", () => {
+  const video = document.getElementById("popupVideo");
+  popup.style.display = "flex";
+
+  video.currentTime = 0; // Baştan başlat
+  video.play();          // Oynat
+  launchHearts();        // Kalpler uçsun!
+});
+
+
+ closeBtn.addEventListener("click", () => {
+  popup.style.display = "none";
+
+  const video = document.getElementById("popupVideo");
+  video.pause();
+  video.currentTime = 0;
+});
+
 
   // Kalp patlaması efekti
   function launchHearts() {
